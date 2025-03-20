@@ -68,6 +68,7 @@ def lease_ips():
 
     # lease time 1 hour
     lease_time = 3600
+    break_line = "</br>"
 
     if mac_address in lease_db:
         lease_db[mac_address] = {"ipv4": f"{ipv4}/24", "ipv6": f"{ipv6}/64"}
@@ -78,11 +79,14 @@ def lease_ips():
             "lease_time": lease_time,
         }
     print(f"mac_address: {mac_address}")
+    print(break_line)
     print(f"DHCP version: DHCPv{dhcp}")
+    print(break_line)
     if ipv4:
         print(f"ipv4: {ipv4}")
     if ipv6:
         print(f"ipv6: {ipv6}")
+    print(break_line)
     print(f"lease_time: {lease_time}")
 
 

@@ -36,6 +36,29 @@
         border-color: #a0a0a0;
       }
 
+      .radio {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+        width: 100%;
+      }
+
+      .radio div {
+        display: flex;
+        gap: 8px;
+      }
+
+      .radio label {
+        display: flex;
+        flex-direction: row;
+        gap: 4px;
+        align-items: center;
+      }
+
+      .radio input {
+        margin-right: 4px;
+      }
+
       button {
         padding: 8px 16px;
         font-size: 16px;
@@ -50,11 +73,11 @@
   </head>
   <body>
     <form action="process.php" method="post">
-      <label for="mac-address">client device MAC address: <input type="text" name="mac-address" id="mac-address" /></label>
-      <div>
+      <label for="mac-address">Client device MAC address: <input type="text" name="mac-address" id="mac-address" /></label>
+      <div class="radio">
         Version:
-        <label for="v4">DHCPv4 <input type="radio" name="v" id="v4" value="4" /></label>
-        <label for="v6">DHCPv6 <input type="radio" name="v" id="v6" value="6" /></label>
+        <div><label for="v4">DHCPv4 <input type="radio" name="dhcp" id="v4" value="4" /></label>
+        <label for="v6">DHCPv6 <input type="radio" name="dhcp" id="v6" value="6" /></label></div>
       </div>
       <button type="submit">Submit</button>
     </form>
